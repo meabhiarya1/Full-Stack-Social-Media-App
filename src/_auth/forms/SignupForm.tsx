@@ -16,7 +16,6 @@ import Loader from "@/components/shared/Loader";
 import { Link } from "react-router-dom";
 import { createUserAccount } from "@/lib/appwrite/api";
 
-
 const SignupForm = () => {
   const isLoading = false;
 
@@ -33,7 +32,7 @@ const SignupForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    console.log(values);
+    // console.log(values);
     const newUser = await createUserAccount(values);
     console.log(newUser);
   }
@@ -49,6 +48,7 @@ const SignupForm = () => {
           To use Snapgram enter your details
         </p>
 
+        {/* //form starts here */}
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col gap-5 w-full mt-4"

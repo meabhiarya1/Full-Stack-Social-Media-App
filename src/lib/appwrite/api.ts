@@ -4,15 +4,15 @@ import { INewUser } from "@/types";
 
 export async function createUserAccount(user: INewUser) {
   try {
-    console.log(user);
+    // console.log(user);
     const newAccount = await account.create(
       ID.unique(),
       user.email,
       user.password,
       user.name
     );
-    console.log(newAccount);
-    // return newAccount;
+    // console.log(newAccount);
+    return newAccount;
   } catch (error) {
     console.log(error);
     return error;
